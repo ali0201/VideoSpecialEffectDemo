@@ -16,7 +16,8 @@
 @interface CommonVideoController : UIViewController
 <
     UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate
+    UINavigationControllerDelegate,
+    UIAlertViewDelegate
 >
 
 @property (nonatomic, strong) AVAsset *videoAsset;
@@ -29,7 +30,7 @@
  *
  *  @return BOOL
  */
-- (BOOL)startMediaBrowserFromViewController:(UIViewController *)controller usingDelegate:(id)delegate;
+- (void)startMediaBrowserFromViewController:(UIViewController *)controller usingDelegate:(id)delegate;
 
 /**
  *  加载特效到视频

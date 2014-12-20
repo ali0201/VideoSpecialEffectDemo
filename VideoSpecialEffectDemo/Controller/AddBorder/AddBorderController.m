@@ -9,10 +9,6 @@
 #import "AddBorderController.h"
 
 @interface AddBorderController ()
-<
-    UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate
->
 
 @property (weak, nonatomic) IBOutlet UISlider *widthBar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *colorSegment;

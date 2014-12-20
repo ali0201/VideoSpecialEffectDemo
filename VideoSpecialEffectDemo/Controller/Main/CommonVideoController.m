@@ -11,6 +11,9 @@
 
 @interface CommonVideoController ()
 
+@property (nonatomic, strong) UIViewController *subVC;
+@property (nonatomic, weak) id delegate;
+
 @end
 
 @implementation CommonVideoController
@@ -27,23 +30,13 @@
 
 #pragma mark - Public Method
 
-- (BOOL)startMediaBrowserFromViewController:(UIViewController *)controller usingDelegate:(id)delegate
+- (void)startMediaBrowserFromViewController:(UIViewController *)controller usingDelegate:(id)delegate
 {
-    // 验证
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO || delegate == nil || controller == nil) {
-        return NO;
-    }
+    self.subVC = controller;
+    self.delegate = delegate;
     
-    // UIImagePickerController
-    UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
-    mediaUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    mediaUI.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
-    mediaUI.allowsEditing = YES;
-    mediaUI.delegate = delegate;
-    
-    [controller presentViewController:mediaUI animated:YES completion:nil];
-    
-    return YES;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"hello" message:@"视频从相册选择还是自拍？" delegate:self cancelButtonTitle:@"相册" otherButtonTitles:@"自拍", nil];
+    [alert show];
 }
 
 - (void)applyVideoEffectsToComposition:(AVMutableVideoComposition *)composition size:(CGSize)size
@@ -150,10 +143,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (error) {
                         [SVProgressHUD showErrorWithStatus:@"保存失败" maskType:SVProgressHUDMaskTypeBlack];
-                        [SVProgressHUD dismiss];
                     } else {
                         [SVProgressHUD showSuccessWithStatus:@"保存成功" maskType:SVProgressHUDMaskTypeBlack];
-                        [SVProgressHUD dismiss];
                     }
                 });
                 
@@ -181,6 +172,29 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // 验证
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO || self.delegate == nil || self.subVC == nil) {
+        return;
+    }
+    
+    // UIImagePickerController
+    UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
+    if (buttonIndex == 0) {
+        mediaUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    } else {
+        mediaUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    mediaUI.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
+    mediaUI.allowsEditing = YES;
+    mediaUI.delegate = self.delegate;
+    
+    [self.subVC presentViewController:mediaUI animated:YES completion:nil];
 }
 
 @end
