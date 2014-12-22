@@ -16,9 +16,10 @@
 		41D368551A4428CB003C1ACD /* VideoSpecialEffectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D368541A4428CB003C1ACD /* VideoSpecialEffectDemoTests.m */; };
 		41D3686F1A457D22003C1ACD /* AddBorderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D368681A457D22003C1ACD /* AddBorderController.m */; };
 		41D368701A457D22003C1ACD /* CommonVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D3686E1A457D22003C1ACD /* CommonVideoController.m */; };
-		41DE5F4C1A47BF560085F1E7 /* AddOverlayBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE5F4B1A47BF560085F1E7 /* AddOverlayBGController.m */; };
-		41DE5F4F1A47CB550085F1E7 /* AddSubTitleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE5F4E1A47CB550085F1E7 /* AddSubTitleController.m */; };
-		41DE5F521A47E8620085F1E7 /* AddTiltController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE5F511A47E8620085F1E7 /* AddTiltController.m */; };
+		41DE5F621A47EF600085F1E7 /* AddAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE5F581A47EF600085F1E7 /* AddAnimationController.m */; };
+		41DE5F631A47EF600085F1E7 /* AddOverlayBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE5F5B1A47EF600085F1E7 /* AddOverlayBGController.m */; };
+		41DE5F641A47EF600085F1E7 /* AddSubTitleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE5F5E1A47EF600085F1E7 /* AddSubTitleController.m */; };
+		41DE5F651A47EF600085F1E7 /* AddTiltController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE5F611A47EF600085F1E7 /* AddTiltController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +49,14 @@
 		41D368681A457D22003C1ACD /* AddBorderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBorderController.m; sourceTree = "<group>"; };
 		41D3686D1A457D22003C1ACD /* CommonVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonVideoController.h; sourceTree = "<group>"; };
 		41D3686E1A457D22003C1ACD /* CommonVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonVideoController.m; sourceTree = "<group>"; };
-		41DE5F4A1A47BF560085F1E7 /* AddOverlayBGController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOverlayBGController.h; sourceTree = SOURCE_ROOT; };
-		41DE5F4B1A47BF560085F1E7 /* AddOverlayBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOverlayBGController.m; sourceTree = SOURCE_ROOT; };
-		41DE5F4D1A47CB550085F1E7 /* AddSubTitleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubTitleController.h; sourceTree = SOURCE_ROOT; };
-		41DE5F4E1A47CB550085F1E7 /* AddSubTitleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubTitleController.m; sourceTree = SOURCE_ROOT; };
-		41DE5F501A47E8620085F1E7 /* AddTiltController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTiltController.h; sourceTree = SOURCE_ROOT; };
-		41DE5F511A47E8620085F1E7 /* AddTiltController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTiltController.m; sourceTree = SOURCE_ROOT; };
+		41DE5F571A47EF600085F1E7 /* AddAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAnimationController.h; sourceTree = "<group>"; };
+		41DE5F581A47EF600085F1E7 /* AddAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAnimationController.m; sourceTree = "<group>"; };
+		41DE5F5A1A47EF600085F1E7 /* AddOverlayBGController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOverlayBGController.h; sourceTree = "<group>"; };
+		41DE5F5B1A47EF600085F1E7 /* AddOverlayBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOverlayBGController.m; sourceTree = "<group>"; };
+		41DE5F5D1A47EF600085F1E7 /* AddSubTitleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSubTitleController.h; sourceTree = "<group>"; };
+		41DE5F5E1A47EF600085F1E7 /* AddSubTitleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSubTitleController.m; sourceTree = "<group>"; };
+		41DE5F601A47EF600085F1E7 /* AddTiltController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTiltController.h; sourceTree = "<group>"; };
+		41DE5F611A47EF600085F1E7 /* AddTiltController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTiltController.m; sourceTree = "<group>"; };
 		B45EF4C825566891969E64F5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D3EAA8D06098815372A8E73D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,21 +151,14 @@
 		41D368641A457D22003C1ACD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				41D368651A457D22003C1ACD /* AddAnimation */,
+				41DE5F561A47EF600085F1E7 /* AddAnimation */,
+				41DE5F591A47EF600085F1E7 /* AddOverlayBG */,
+				41DE5F5C1A47EF600085F1E7 /* AddSubTitle */,
+				41DE5F5F1A47EF600085F1E7 /* AddTilt */,
 				41D368661A457D22003C1ACD /* AddBorder */,
-				41D368691A457D22003C1ACD /* AddOverLayer */,
-				41D3686A1A457D22003C1ACD /* AddSubTitle */,
-				41D3686B1A457D22003C1ACD /* AddTilt */,
 				41D3686C1A457D22003C1ACD /* Main */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		41D368651A457D22003C1ACD /* AddAnimation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddAnimation;
 			sourceTree = "<group>";
 		};
 		41D368661A457D22003C1ACD /* AddBorder */ = {
@@ -174,33 +170,6 @@
 			path = AddBorder;
 			sourceTree = "<group>";
 		};
-		41D368691A457D22003C1ACD /* AddOverLayer */ = {
-			isa = PBXGroup;
-			children = (
-				41DE5F4A1A47BF560085F1E7 /* AddOverlayBGController.h */,
-				41DE5F4B1A47BF560085F1E7 /* AddOverlayBGController.m */,
-			);
-			path = AddOverLayer;
-			sourceTree = "<group>";
-		};
-		41D3686A1A457D22003C1ACD /* AddSubTitle */ = {
-			isa = PBXGroup;
-			children = (
-				41DE5F4D1A47CB550085F1E7 /* AddSubTitleController.h */,
-				41DE5F4E1A47CB550085F1E7 /* AddSubTitleController.m */,
-			);
-			path = AddSubTitle;
-			sourceTree = "<group>";
-		};
-		41D3686B1A457D22003C1ACD /* AddTilt */ = {
-			isa = PBXGroup;
-			children = (
-				41DE5F501A47E8620085F1E7 /* AddTiltController.h */,
-				41DE5F511A47E8620085F1E7 /* AddTiltController.m */,
-			);
-			path = AddTilt;
-			sourceTree = "<group>";
-		};
 		41D3686C1A457D22003C1ACD /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +177,42 @@
 				41D3686E1A457D22003C1ACD /* CommonVideoController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		41DE5F561A47EF600085F1E7 /* AddAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				41DE5F571A47EF600085F1E7 /* AddAnimationController.h */,
+				41DE5F581A47EF600085F1E7 /* AddAnimationController.m */,
+			);
+			path = AddAnimation;
+			sourceTree = "<group>";
+		};
+		41DE5F591A47EF600085F1E7 /* AddOverlayBG */ = {
+			isa = PBXGroup;
+			children = (
+				41DE5F5A1A47EF600085F1E7 /* AddOverlayBGController.h */,
+				41DE5F5B1A47EF600085F1E7 /* AddOverlayBGController.m */,
+			);
+			path = AddOverlayBG;
+			sourceTree = "<group>";
+		};
+		41DE5F5C1A47EF600085F1E7 /* AddSubTitle */ = {
+			isa = PBXGroup;
+			children = (
+				41DE5F5D1A47EF600085F1E7 /* AddSubTitleController.h */,
+				41DE5F5E1A47EF600085F1E7 /* AddSubTitleController.m */,
+			);
+			path = AddSubTitle;
+			sourceTree = "<group>";
+		};
+		41DE5F5F1A47EF600085F1E7 /* AddTilt */ = {
+			isa = PBXGroup;
+			children = (
+				41DE5F601A47EF600085F1E7 /* AddTiltController.h */,
+				41DE5F611A47EF600085F1E7 /* AddTiltController.m */,
+			);
+			path = AddTilt;
 			sourceTree = "<group>";
 		};
 		86653F6CDABE9DB4EA6FC001 /* Pods */ = {
@@ -354,13 +359,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41DE5F4C1A47BF560085F1E7 /* AddOverlayBGController.m in Sources */,
-				41DE5F521A47E8620085F1E7 /* AddTiltController.m in Sources */,
+				41DE5F651A47EF600085F1E7 /* AddTiltController.m in Sources */,
 				41D368701A457D22003C1ACD /* CommonVideoController.m in Sources */,
+				41DE5F641A47EF600085F1E7 /* AddSubTitleController.m in Sources */,
+				41DE5F621A47EF600085F1E7 /* AddAnimationController.m in Sources */,
 				41D3683E1A4428CB003C1ACD /* AppDelegate.m in Sources */,
+				41DE5F631A47EF600085F1E7 /* AddOverlayBGController.m in Sources */,
 				41D3683B1A4428CB003C1ACD /* main.m in Sources */,
 				41D3686F1A457D22003C1ACD /* AddBorderController.m in Sources */,
-				41DE5F4F1A47CB550085F1E7 /* AddSubTitleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,7 +55,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtT-2y-9al">
                                 <rect key="frame" x="158" y="399" width="60" height="30"/>
-                                <state key="normal" title="添加标题">
+                                <state key="normal" title="添加动画">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="751.5" y="406.5"/>
         </scene>
-        <!--添加标题-->
+        <!--添加动画-->
         <scene sceneID="Na0-kz-pWM">
             <objects>
-                <viewController id="BIV-HR-EeQ" sceneMemberID="viewController">
+                <viewController id="BIV-HR-EeQ" customClass="AddAnimationController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HxC-Cf-YSM"/>
                         <viewControllerLayoutGuide type="bottom" id="yEh-ic-zPU"/>
@@ -96,9 +96,59 @@
                     <view key="view" contentMode="scaleToFill" id="qLd-Ur-WrM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFg-XR-EGh">
+                                <rect key="frame" x="142" y="104" width="90" height="30"/>
+                                <state key="normal" title="点击添加视频">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addVideoClick:" destination="BIV-HR-EeQ" eventType="touchUpInside" id="Q9M-6l-kKB"/>
+                                    <action selector="addVideoClick:" destination="UGc-OY-HEV" eventType="touchUpInside" id="hnN-uB-F2y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFg-eC-4TN">
+                                <rect key="frame" x="158" y="273" width="60" height="30"/>
+                                <state key="normal" title="导出视频">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="videoOutputClick:" destination="BIV-HR-EeQ" eventType="touchUpInside" id="IWD-KR-cP2"/>
+                                    <action selector="videoOutputClick:" destination="UGc-OY-HEV" eventType="touchUpInside" id="aLe-2e-gk6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择动画" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baY-Fz-2Mr">
+                                <rect key="frame" x="154" y="174" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sgI-Wt-GnY">
+                                <rect key="frame" x="40" y="205" width="295" height="29"/>
+                                <segments>
+                                    <segment title="旋转"/>
+                                    <segment title="逐渐变淡"/>
+                                    <segment title="闪烁"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="baY-Fz-2Mr" secondAttribute="centerX" id="100-kQ-Ql6"/>
+                            <constraint firstAttribute="centerX" secondItem="DFg-XR-EGh" secondAttribute="centerX" id="VI1-ZA-b0H"/>
+                            <constraint firstAttribute="trailing" secondItem="sgI-Wt-GnY" secondAttribute="trailing" constant="40" id="YAu-Wd-wK1"/>
+                            <constraint firstItem="hFg-eC-4TN" firstAttribute="top" secondItem="sgI-Wt-GnY" secondAttribute="bottom" constant="40" id="Z46-0a-yET"/>
+                            <constraint firstItem="sgI-Wt-GnY" firstAttribute="leading" secondItem="qLd-Ur-WrM" secondAttribute="leading" constant="40" id="b5Y-3s-UfZ"/>
+                            <constraint firstItem="sgI-Wt-GnY" firstAttribute="top" secondItem="baY-Fz-2Mr" secondAttribute="bottom" constant="10" id="fst-on-NxZ"/>
+                            <constraint firstAttribute="centerX" secondItem="hFg-eC-4TN" secondAttribute="centerX" id="hco-nE-f6H"/>
+                            <constraint firstItem="DFg-XR-EGh" firstAttribute="top" secondItem="HxC-Cf-YSM" secondAttribute="bottom" constant="40" id="mOv-R5-SXa"/>
+                            <constraint firstItem="baY-Fz-2Mr" firstAttribute="top" secondItem="DFg-XR-EGh" secondAttribute="bottom" constant="40" id="pdI-xV-Afx"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="添加标题" id="pbM-oi-dtP"/>
+                    <navigationItem key="navigationItem" title="添加动画" id="pbM-oi-dtP"/>
+                    <connections>
+                        <outlet property="animationSelectSegment" destination="sgI-Wt-GnY" id="SrX-a0-c2X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9H1-Fw-ClK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
