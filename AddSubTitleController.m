@@ -1,23 +1,23 @@
 //
-//  AddOverLayerController.m
+//  AddSubTitleController.m
 //  VideoSpecialEffectDemo
 //
 //  Created by Kevin on 14/12/22.
 //  Copyright (c) 2014年 HGG. All rights reserved.
 //
 
-#import "AddOverlayBGController.h"
+#import "AddSubTitleController.h"
 
-@interface AddOverlayBGController ()
+@interface AddSubTitleController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *frameSelectSegment;
+@property (weak, nonatomic) IBOutlet UITextField *subTitleTextField;
 
 - (IBAction)addVideoClick:(UIButton *)sender;
 - (IBAction)videoOutputClick:(UIButton *)sender;
 
 @end
 
-@implementation AddOverlayBGController
+@implementation AddSubTitleController
 
 - (void)viewDidLoad
 {
@@ -29,42 +29,40 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.subTitleTextField resignFirstResponder];
+}
+
 #pragma mark - SuperClass Method
 
 - (void)applyVideoEffectsToComposition:(AVMutableVideoComposition *)composition size:(CGSize)size
 {
-    // 选择背景图片，背景图层
-    CALayer *overlayBGLayer = [CALayer layer];
-    UIImage *overlayBGImage;
+    // 设置子标题图层
+    CATextLayer *subTitle = [CATextLayer layer];
+    [subTitle setFont:@"Helvetica-Bold"];
+    [subTitle setFontSize:36];
+    [subTitle setFrame:CGRectMake(0, 0, size.width, 100)];
+    [subTitle setString:self.subTitleTextField.text];
+    [subTitle setAlignmentMode:kCAAlignmentCenter];
+    [subTitle setForegroundColor:[[UIColor whiteColor] CGColor]];
     
-    switch (self.frameSelectSegment.selectedSegmentIndex) {
-        case 0:
-            overlayBGImage = [UIImage imageNamed:@"Frame-1"];
-            break;
-        case 1:
-            overlayBGImage = [UIImage imageNamed:@"Frame-2"];
-            break;
-        case 2:
-            overlayBGImage = [UIImage imageNamed:@"Frame-3"];
-            break;
-        default:
-            break;
-    }
-    
-    [overlayBGLayer setContents:(id)[overlayBGImage CGImage]];
-    [overlayBGLayer setFrame:CGRectMake(0, 0, size.width, size.height)];
-    [overlayBGLayer setMasksToBounds:YES];
+    // 设置覆盖图层，添加子标题图层
+    CALayer *overlayLayer = [CALayer layer];
+    [overlayLayer addSublayer:subTitle];
+    [overlayLayer setFrame:CGRectMake(0, 0, size.width, size.height)];
+    [overlayLayer setMasksToBounds:YES];
     
     // 视频图层
     CALayer *videoLayer = [CALayer layer];
-    videoLayer.frame = CGRectMake(0, 0, size.width, size.height);
-
+    [videoLayer setFrame:CGRectMake(0, 0, size.width, size.height)];
+    
     // 父图层
     CALayer *parentLayer = [CALayer layer];
     [parentLayer setFrame:CGRectMake(0, 0, size.width, size.height)];
     [parentLayer addSublayer:videoLayer];
-    [parentLayer addSublayer:overlayBGLayer];
-    
+    [parentLayer addSublayer:overlayLayer];
+   
     // AVMutableVideoComposition
     composition.animationTool = [AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
 }

@@ -53,11 +53,13 @@
             break;
     }
     
+    // 背景图层
     CALayer *backgroundLayer = [CALayer layer];
     [backgroundLayer setContents:(id)[borderImage CGImage]];
-    backgroundLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    [backgroundLayer setFrame:CGRectMake(0, 0, size.width, size.height)];
     [backgroundLayer setMasksToBounds:YES];
     
+    // 视频图层
     CALayer *videoLayer = [CALayer layer];
     CGFloat videoLayerX = self.widthBar.value;
     CGFloat videoLayerY = self.widthBar.value;
@@ -65,11 +67,13 @@
     CGFloat videoLayerH = size.height - (self.widthBar.value * 2);
     videoLayer.frame = CGRectMake(videoLayerX, videoLayerY, videoLayerW, videoLayerH);
 
+    // 父图层
     CALayer *parentLayer = [CALayer layer];
-    parentLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    [parentLayer setFrame:CGRectMake(0, 0, size.width, size.height)];
     [parentLayer addSublayer:backgroundLayer];
     [parentLayer addSublayer:videoLayer];
    
+    // AVMutableVideoComposition
     composition.animationTool = [AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
 }
 
