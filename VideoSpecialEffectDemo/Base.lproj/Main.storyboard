@@ -27,8 +27,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDw-zA-gde">
-                                <rect key="frame" x="116" y="279" width="144" height="30"/>
-                                <state key="normal" title="Add Overlay to video">
+                                <rect key="frame" x="158" y="279" width="60" height="30"/>
+                                <state key="normal" title="添加背景">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="1906.5" y="-1184.5"/>
         </scene>
-        <!--Add Overlay to video-->
+        <!--添加背景-->
         <scene sceneID="n5C-8C-qMj">
             <objects>
-                <viewController id="leS-gW-ZxT" sceneMemberID="viewController">
+                <viewController id="leS-gW-ZxT" customClass="AddOverlayBGController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kSQ-8E-LCA"/>
                         <viewControllerLayoutGuide type="bottom" id="uye-GM-AvW"/>
@@ -201,11 +201,90 @@
                     <view key="view" contentMode="scaleToFill" id="Dec-FU-tUy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60O-Xl-Vjg">
+                                <rect key="frame" x="143" y="104" width="90" height="30"/>
+                                <state key="normal" title="点击添加视频">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addVideoClick:" destination="leS-gW-ZxT" eventType="touchUpInside" id="rEd-hB-JOC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择背景" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-yH-o3q">
+                                <rect key="frame" x="154" y="174" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sJu-v9-jve">
+                                <rect key="frame" x="40" y="205" width="295" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="Third"/>
+                                </segments>
+                            </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-2" translatesAutoresizingMaskIntoConstraints="NO" id="cCj-Wj-2pA">
+                                <rect key="frame" x="143" y="243" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="IhA-4M-9fb"/>
+                                    <constraint firstAttribute="width" constant="90" id="ddq-vS-wYD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-1" translatesAutoresizingMaskIntoConstraints="NO" id="sdu-10-BeP">
+                                <rect key="frame" x="43" y="243" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="FVR-eT-Pua"/>
+                                    <constraint firstAttribute="height" constant="90" id="Msg-XA-S3V"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-3" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-do-1Yb">
+                                <rect key="frame" x="243" y="243" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="XZ2-q0-B8l"/>
+                                    <constraint firstAttribute="width" constant="90" id="meJ-xY-BcT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8M-vU-sAo">
+                                <rect key="frame" x="158" y="373" width="60" height="30"/>
+                                <state key="normal" title="导出视频">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="videoOutputClick:" destination="leS-gW-ZxT" eventType="touchUpInside" id="RQT-gD-YaG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cCj-Wj-2pA" firstAttribute="centerY" secondItem="sdu-10-BeP" secondAttribute="centerY" id="0Ta-cm-zZ0"/>
+                            <constraint firstItem="sJu-v9-jve" firstAttribute="leading" secondItem="Dec-FU-tUy" secondAttribute="leading" constant="40" id="5dq-B1-udH"/>
+                            <constraint firstAttribute="centerX" secondItem="7AE-yH-o3q" secondAttribute="centerX" id="8dG-fU-smj"/>
+                            <constraint firstItem="cCj-Wj-2pA" firstAttribute="height" secondItem="6Te-do-1Yb" secondAttribute="height" id="HfF-LS-M0U"/>
+                            <constraint firstItem="cCj-Wj-2pA" firstAttribute="leading" secondItem="sdu-10-BeP" secondAttribute="trailing" constant="10" id="Vj7-MV-cyU"/>
+                            <constraint firstItem="6Te-do-1Yb" firstAttribute="leading" secondItem="cCj-Wj-2pA" secondAttribute="trailing" constant="10" id="Yc2-Ho-kLH"/>
+                            <constraint firstItem="sJu-v9-jve" firstAttribute="top" secondItem="7AE-yH-o3q" secondAttribute="bottom" constant="10" id="YgL-Wd-nDb"/>
+                            <constraint firstAttribute="trailing" secondItem="sJu-v9-jve" secondAttribute="trailing" constant="40" id="Ysu-lO-FYv"/>
+                            <constraint firstItem="cCj-Wj-2pA" firstAttribute="top" secondItem="sJu-v9-jve" secondAttribute="bottom" constant="10" id="a13-x6-SdG"/>
+                            <constraint firstItem="cCj-Wj-2pA" firstAttribute="width" secondItem="6Te-do-1Yb" secondAttribute="width" id="bG5-Wo-mVQ"/>
+                            <constraint firstAttribute="centerX" secondItem="cCj-Wj-2pA" secondAttribute="centerX" id="bqX-u2-6Qk"/>
+                            <constraint firstAttribute="centerX" secondItem="H8M-vU-sAo" secondAttribute="centerX" id="gPz-NT-d70"/>
+                            <constraint firstAttribute="centerX" secondItem="60O-Xl-Vjg" secondAttribute="centerX" id="kTy-nd-ta7"/>
+                            <constraint firstItem="60O-Xl-Vjg" firstAttribute="top" secondItem="kSQ-8E-LCA" secondAttribute="bottom" constant="40" id="pmR-yK-GEf"/>
+                            <constraint firstItem="7AE-yH-o3q" firstAttribute="top" secondItem="60O-Xl-Vjg" secondAttribute="bottom" constant="40" id="q6F-4z-uBJ"/>
+                            <constraint firstItem="H8M-vU-sAo" firstAttribute="top" secondItem="cCj-Wj-2pA" secondAttribute="bottom" constant="40" id="vQ4-68-n9e"/>
+                            <constraint firstItem="cCj-Wj-2pA" firstAttribute="width" secondItem="sdu-10-BeP" secondAttribute="width" id="wVY-28-clF"/>
+                            <constraint firstItem="cCj-Wj-2pA" firstAttribute="height" secondItem="sdu-10-BeP" secondAttribute="height" id="xnk-yX-6wM"/>
+                            <constraint firstItem="cCj-Wj-2pA" firstAttribute="centerY" secondItem="6Te-do-1Yb" secondAttribute="centerY" id="z42-mc-8Vx"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Overlay to video" id="5Jp-fh-mG4"/>
+                    <navigationItem key="navigationItem" title="添加背景" id="5Jp-fh-mG4"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="frameSelectSegment" destination="sJu-v9-jve" id="bLe-JR-Q9h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsb-Sb-MPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,4 +353,9 @@
             <point key="canvasLocation" x="271" y="407"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Frame-1" width="1280" height="1280"/>
+        <image name="Frame-2" width="1280" height="1280"/>
+        <image name="Frame-3" width="1280" height="1280"/>
+    </resources>
 </document>

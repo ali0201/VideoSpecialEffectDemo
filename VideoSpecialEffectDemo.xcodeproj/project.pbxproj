@@ -16,6 +16,7 @@
 		41D368551A4428CB003C1ACD /* VideoSpecialEffectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D368541A4428CB003C1ACD /* VideoSpecialEffectDemoTests.m */; };
 		41D3686F1A457D22003C1ACD /* AddBorderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D368681A457D22003C1ACD /* AddBorderController.m */; };
 		41D368701A457D22003C1ACD /* CommonVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D3686E1A457D22003C1ACD /* CommonVideoController.m */; };
+		41DE5F4C1A47BF560085F1E7 /* AddOverlayBGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DE5F4B1A47BF560085F1E7 /* AddOverlayBGController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		41D368681A457D22003C1ACD /* AddBorderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBorderController.m; sourceTree = "<group>"; };
 		41D3686D1A457D22003C1ACD /* CommonVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonVideoController.h; sourceTree = "<group>"; };
 		41D3686E1A457D22003C1ACD /* CommonVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonVideoController.m; sourceTree = "<group>"; };
+		41DE5F4A1A47BF560085F1E7 /* AddOverlayBGController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOverlayBGController.h; sourceTree = SOURCE_ROOT; };
+		41DE5F4B1A47BF560085F1E7 /* AddOverlayBGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOverlayBGController.m; sourceTree = SOURCE_ROOT; };
 		B45EF4C825566891969E64F5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D3EAA8D06098815372A8E73D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,6 +171,8 @@
 		41D368691A457D22003C1ACD /* AddOverLayer */ = {
 			isa = PBXGroup;
 			children = (
+				41DE5F4A1A47BF560085F1E7 /* AddOverlayBGController.h */,
+				41DE5F4B1A47BF560085F1E7 /* AddOverlayBGController.m */,
 			);
 			path = AddOverLayer;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41DE5F4C1A47BF560085F1E7 /* AddOverlayBGController.m in Sources */,
 				41D368701A457D22003C1ACD /* CommonVideoController.m in Sources */,
 				41D3683E1A4428CB003C1ACD /* AppDelegate.m in Sources */,
 				41D3683B1A4428CB003C1ACD /* main.m in Sources */,
